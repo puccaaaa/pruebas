@@ -1,78 +1,79 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trastornos Mentales</title>
+<!DOCTYPE html><!--documento html-->
+<html lang="es"><!--idioma espanol-->
+<head><!--cabecera-->
+    <meta charset="UTF-8"><!--Ajuste a cualquier pantalla-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--interfaz de vista-->
+    <title>Trastornos Mentales</title><!--titulo de pestana-->
+    <!--inicio de css-->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #6b98a3;
-            color: #333;
+        body {       
+            font-family: Arial, sans-serif;/*tipo de fuente*/
+            background-color: #6b98a3;/*color de fondo*/
+            color: #333;/*color de letra*/
             margin: 0;
             padding: 0;
         }
-
+    /*navegador al lado*/
         .sidebar {
-            width: 250px;
+            width: 250px;/*ancho*/
             background-color: #3c4a5f;
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
+            padding: 20px;/*margen interno superior*/
+            height: 100vh;/*altura*/
+            position: fixed;/*menu lateral fijo*/
             top: 0;
             left: -250px;
-            color: white;
+            color: white; 
             transition: left 0.3s;
         }
-
+    /*texto del navegador centrado*/
         .sidebar h2 {
             text-align: center;
         }
-
+    /*texto de navegador en forma de lista*/
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
-
+    /*espacio de cada opcion del navegador*/    
         .sidebar ul li {
             padding: 10px 0;
         }
-
+    /*configuracion de texto del navegador*/
         .sidebar ul li a {
             color: white;
             text-decoration: none;
-            display: block;
+            display: block;/*opcion todo el ancho disponible*/
             padding: 8px;
         }
-
+    /*desplegacion del navegador*/
         .sidebar ul li a:hover {
             background-color: #576b87;
-            border-radius: 5px;
+            border-radius: 5px;/*esquinas redondeadas*/
         }
-
+    /*contenido del navegador*/
         .content {
             padding: 20px;
             margin-left: 20px;
         }
-
+    /*titulo de navegador centrado*/
         .cabe {
             background-color: rgba(86, 127, 131, 0.568);
             padding: 20px;
-            text-align: center;
+            text-align: center;/*menu*/
         }
-
+    /*color y estilo del titulo*/
         h1 {
             color: #3c4a5f;
             font-size: 50px;
         }
-
+    /*color y estilo de frase*/
         p {
             font-size: 15px;
             font-style: italic;
+            text-align: center;
         }
-
+    /*boton para desplazar menu*/
         .menu-button {
-            position: fixed;
             top: 20px;
             left: 20px;
             background-color: #3c4a5f;
