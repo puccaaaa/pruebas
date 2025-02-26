@@ -1,110 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Trastornos Mentales</title>    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trastornos Mentales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6b98a3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-        <link rel="stylesheet" href="styles.css"> <!--etiqueta html para conectar el archivo css-->
+        .sidebar {
+            width: 250px;
+            background-color: #3c4a5f;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            color: white;
+            transition: left 0.3s;
+        }
 
-        <style>
-            /* General */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+        .sidebar h2 {
+            text-align: center;
+        }
 
-            body {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transform: rotate(90deg); /* Rotación de toda la página */
-                transform-origin: top left;
-                width: 100vh; /* Establece el ancho basado en la altura */
-                overflow: hidden;
-            }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
 
-            .contenido {
-                text-align: center;
-                transform: rotate(-90deg); /* Restaura la rotación para el contenido */
-                transform-origin: top left;
-            }
+        .sidebar ul li {
+            padding: 10px 0;
+        }
 
-            /* Sidebar */
-            .sidebar {
-                position: fixed;
-                right: 0;
-                top: 0;
-                width: 250px;
-                height: 100px;
-                background-color: #333;
-                padding-top: 20px;
-                transition: 0.3s;
-            }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
 
-            .sidebar a {
-                display: block;
-                color: white;
-                padding: 15px;
-                text-decoration: none;
-                font-size: 18px;
-            }
+        .sidebar ul li a:hover {
+            background-color: #576b87;
+            border-radius: 5px;
+        }
 
-            .sidebar a:hover {
-                background-color: #575757;
-            }
+        .content {
+            padding: 20px;
+            margin-left: 20px;
+        }
 
-            /* Botón Toggle */
-            .togle-ntn {
-                position: fixed;
-                right: 260px;
-                top: 20px;
-                background-color: #333;
-                color: white;
-                border: none;
-                padding: 10px 15px;
-                cursor: pointer;
-                font-size: 18px;
-            }
+        .cabe {
+            background-color: rgba(86, 127, 131, 0.568);
+            padding: 20px;
+            text-align: center;
+        }
 
-            /* Estilo de cabecera */
-            .cabe {
-                background-color: rgba(86, 127, 131, 0.568);
-                padding: 20px;
-                text-align: center;
-            }
+        h1 {
+            color: #3c4a5f;
+            font-size: 50px;
+        }
 
-            /* Estilo de cuerpo */
-            body {
-                font-family: arial, serif;
-                background-color: #6b98a3;
-                color: #333;
-                text-align: center;
-            }
+        p {
+            font-size: 15px;
+            font-style: italic;
+        }
 
-            h1 {
-                color: #3c4a5f;
-                font-size: 50px;
-            }
+        .menu-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #3c4a5f;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
+    <div class="sidebar" id="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="#ansiedad">Ansiedad</a></li>
+            <li><a href="#depresion">Depresión</a></li>
+            <li><a href="#bipolaridad">Bipolaridad</a></li>
+            <li><a href="#tdah">TDAH</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
 
-            p {
-                font-size: 15px;
-                font-style: italic;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="contenido">
-            <div class="cabe">
-                <h1>Trastornos Mentales</h1>
-            </div>
-            <div class="sidebar">
-                <!-- Aquí puedes agregar enlaces en el futuro -->
-            </div>
-            <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
+    <div class="content">
+        <div class="cabe">
+            <h1>Trastornos Mentales</h1>
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar.style.left === "-250px") {
+                sidebar.style.left = "0";
+            } else {
+                sidebar.style.left = "-250px";
+            }
+        }
+    </script>
 </body>
 </html>
