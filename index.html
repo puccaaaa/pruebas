@@ -1,75 +1,108 @@
-
-<!DOCTYPE html><!----documento html-->
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>
-            Trastornos Mentales  </title>    
+        <title>Trastornos Mentales</title>    
 
-           <link rel="stylesheet" 
-           href="styles.css"> <!--etiqueta html para conecta el archivo css-->
+        <link rel="stylesheet" href="styles.css"> <!--etiqueta html para conectar el archivo css-->
 
-           <style>
-            .sidebar{
+        <style>
+            /* General */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html, body {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: rotate(90deg); /* Rotación de toda la página */
+                transform-origin: top left;
+                width: 100vh; /* Establece el ancho basado en la altura */
+                overflow: hidden;
+            }
+
+            .contenido {
+                text-align: center;
+                transform: rotate(-90deg); /* Restaura la rotación para el contenido */
+                transform-origin: top left;
+            }
+
+            /* Sidebar */
+            .sidebar {
                 position: fixed;
-                right:0;
-                top:0;
+                right: 0;
+                top: 0;
                 width: 250px;
-                height:100px;
-                background-color:#333;
-                padding-top:20px;
-                transition:0.3s;
+                height: 100px;
+                background-color: #333;
+                padding-top: 20px;
+                transition: 0.3s;
             }
-            .sidebar{
-                display:block;
-                color:white;
-                padding:15px;
-                text-decoration:none;
-                font-size:18px;
+
+            .sidebar a {
+                display: block;
+                color: white;
+                padding: 15px;
+                text-decoration: none;
+                font-size: 18px;
             }
-            .sidebar a:hover{
-                background-color:#575757;
+
+            .sidebar a:hover {
+                background-color: #575757;
             }
-            .togle-ntn{
-                position:fixed;
-                right:260px;
-                top:20px;
-                background-color:#333;
-                color:white;
-                border:none;
-                padding:10px 15px;
-                cursor:pointer;
-                font-size:18px;
+
+            /* Botón Toggle */
+            .togle-ntn {
+                position: fixed;
+                right: 260px;
+                top: 20px;
+                background-color: #333;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 18px;
             }
-            .cabe{
-                background-color: rgba(86, 127, 131, 0.568) ;
+
+            /* Estilo de cabecera */
+            .cabe {
+                background-color: rgba(86, 127, 131, 0.568);
                 padding: 20px;
                 text-align: center;
             }
-                body {
-                    font-family:arial,serif;
-                    background-color:#6b98a3;
-                    color:#333;
-                    text-align:center;
-                }
-                h1 {
-                    color:#3c4a5f;
-                    font-size:50px;
-                }
-                p {
-                    font-size:15px;
-                    font-style: italic;
-                }
-        </style>
-        </head>
-    <body>
-        <div class="cabe">
-            <h1> Trastornos Mentales </h1>
-        </div>
-        <div class="sidebar">
 
+            /* Estilo de cuerpo */
+            body {
+                font-family: arial, serif;
+                background-color: #6b98a3;
+                color: #333;
+                text-align: center;
+            }
+
+            h1 {
+                color: #3c4a5f;
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 15px;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenido">
+            <div class="cabe">
+                <h1>Trastornos Mentales</h1>
+            </div>
+            <div class="sidebar">
+                <!-- Aquí puedes agregar enlaces en el futuro -->
+            </div>
+            <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
         </div>
-        <p> "Cuidemos nuestra mente como cuidamos nuestro cuerpo" </p>
-        
-</body> 
+    </body> 
 </html>
