@@ -74,6 +74,7 @@
         }
     /*boton para desplazar menu*/
         .menu-button {
+            position: fixed;
             top: 20px;
             left: 20px;
             background-color: #3c4a5f;
@@ -86,9 +87,11 @@
     </style>
 </head>
 <body>
+    <!--clase de boton de menu-->
     <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
-    <div class="sidebar" id="sidebar">
-        <h2>Menú</h2>
+    <div class="sidebar" id="sidebar"><!--clase para barra lateral-->
+        <h2>Menú</h2><!--titulo de navegador-->
+        <!--pestanas del navegador-->
         <ul>
             <li><a href="#ansiedad">Ansiedad</a></li>
             <li><a href="#depresion">Depresión</a></li>
@@ -98,19 +101,25 @@
         </ul>
     </div>
 
-    <div class="content">
-        <div class="cabe">
+    <div class="content"><!--clase contenido del navegador-->
+        <div class="cabe"><!--clase para que funcione el contenido css-->
             <h1>Trastornos Mentales</h1>
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
     </div>
 
+<!--inicia javascript-->
     <script>
+        /*funcion para alterrar la visibilidad del menu lateral*/
         function toggleMenu() {
+            /*obtener el elemento con el ID "sidebar"*/
             const sidebar = document.getElementById("sidebar");
+            /*verificar si el menu esta oculto o visible*/
             if (sidebar.style.left === "-250px") {
+                /*si esta oculto, lo muestra moviendolo a la posicion 0*/
                 sidebar.style.left = "0";
             } else {
+                /*si esta visible lo oculta moviendolo a -250px*/
                 sidebar.style.left = "-250px";
             }
         }
