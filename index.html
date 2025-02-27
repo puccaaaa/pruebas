@@ -1,78 +1,89 @@
-<!DOCTYPE html><!--documento html-->
-<html lang="es"><!--idioma espanol-->
-<head><!--cabecera-->
-    <meta charset="UTF-8"><!--Ajuste a cualquier pantalla-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--interfaz de vista-->
-    <title>Trastornos Mentales</title><!--titulo de pestana-->
-    <!--inicio de css-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trastornos Mentales</title>
     <style>
+        /* Estilo general del cuerpo */
         body {       
-            font-family: Arial, sans-serif;/*tipo de fuente*/
-            background-color: #6b98a3;/*color de fondo*/
-            color: #333;/*color de letra*/
+            font-family: Arial, sans-serif;
+            background-color: #6b98a3;
+            color: #333;
             margin: 0;
             padding: 0;
         }
-    /*navegador al lado*/
+    
+        /* Configuración del menú lateral como ancho, margen interior, altura y colores*/
         .sidebar {
-            width: 250px;/*ancho*/
+            width: 250px;
             background-color: #3c4a5f;
-            padding: 20px;/*margen interno superior*/
-            height: 100vh;/*altura*/
-            position: fixed;/*menu lateral fijo*/
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
             top: 0;
-            left: -250px;
+            left: -250px; /* Inicialmente oculto */
             color: white; 
-            transition: left 0.3s;
+            transition: left 0.3s; /* Transición suave al desplegar */
         }
-    /*texto del navegador centrado*/
+    
+        /* Título del menú centrado */
         .sidebar h2 {
             text-align: center;
         }
-    /*texto de navegador en forma de lista*/
+    
+        /* Lista de opciones del menú */
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
-    /*espacio de cada opcion del navegador*/    
+    
+        /* Espaciado entre los elementos del menú */
         .sidebar ul li {
             padding: 10px 0;
         }
-    /*configuracion de texto del navegador*/
+    
+        /* Enlaces dentro del menú */
         .sidebar ul li a {
             color: white;
             text-decoration: none;
-            display: block;/*opcion todo el ancho disponible*/
+            display: block;
             padding: 8px;
         }
-    /*desplegacion del navegador*/
+    
+        /* Efecto hover en los enlaces del menú */
         .sidebar ul li a:hover {
             background-color: #576b87;
-            border-radius: 5px;/*esquinas redondeadas*/
+            border-radius: 5px;
         }
-    /*contenido del navegador*/
+    
+        /* Estilo del contenido principal */
         .content {
             padding: 20px;
             margin-left: 20px;
         }
-    /*titulo de navegador centrado*/
+    
+        /* Cabecera del contenido */
         .cabe {
             background-color: rgba(86, 127, 131, 0.568);
             padding: 20px;
-            text-align: center;/*menu*/
+            text-align: center;
         }
-    /*color y estilo del titulo*/
+    
+        /* Título principal */
         h1 {
             color: #3c4a5f;
             font-size: 50px;
         }
-    /*color y estilo de frase*/
+    
+        /* Texto de presentación */
         p {
             font-size: 15px;
             font-style: italic;
             text-align: center;
         }
-    /*boton para desplazar menu*/
+    
+        /* Botón para mostrar el menú */
         .menu-button {
             position: fixed;
             top: 20px;
@@ -83,46 +94,48 @@
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Checkbox oculto para controlar el menú */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Cuando el checkbox está marcado, muestra el menú */
+        #menu-toggle:checked ~ .sidebar {
+            left: 0;
         }
     </style>
 </head>
 <body>
-    <!--clase de boton de menu-->
-    <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
-    <div class="sidebar" id="sidebar"><!--clase para barra lateral-->
-        <h2>Menú</h2><!--titulo de navegador-->
-        <!--pestanas del navegador-->
+    <!-- Checkbox oculto para activar el menú -->
+    <input type="checkbox" id="menu-toggle">
+    <!-- Botón de menú vinculado al checkbox -->
+    <label for="menu-toggle" class="menu-button">☰ Menú</label>
+    <div class="sidebar">
+        <h2>Menú</h2>
         <ul>
             <li><a href="#ansiedad">Ansiedad</a></li>
             <li><a href="#depresion">Depresión</a></li>
+            <li><a href="#Tdi">TDI</a></li>
+            <li><a href="#Tlp">TLP</a></li>
+            <li><a href="#Tept">TEPT</a></li>
+            <li><a href="#Toc">TOC</a></li>
+            <li><a href="#Trastorno de panico">Trastorno de pánico</a></li>
+            <li><a href="#esquizofrenia">Esquizofrenia</a></li>
+            <li><a href="#trastornos alimenticios">TCA</a></li>
             <li><a href="#bipolaridad">Bipolaridad</a></li>
             <li><a href="#tdah">TDAH</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </div>
 
-    <div class="content"><!--clase contenido del navegador-->
-        <div class="cabe"><!--clase para que funcione el contenido css-->
-            <h1>Trastornos Mentales</h1>
+    <div class="content">
+        <div class="cabe">
+            <h1> Trastornos Mentales </h1>
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
     </div>
-
-<!--inicia javascript-->
-    <script>
-        /*funcion para alterrar la visibilidad del menu lateral*/
-        function toggleMenu() {
-            /*obtener el elemento con el ID "sidebar"*/
-            const sidebar = document.getElementById("sidebar");
-            /*verificar si el menu esta oculto o visible*/
-            if (sidebar.style.left === "-250px") {
-                /*si esta oculto, lo muestra moviendolo a la posicion 0*/
-                sidebar.style.left = "0";
-            } else {
-                /*si esta visible lo oculta moviendolo a -250px*/
-                sidebar.style.left = "-250px";
-            }
-        }
-    </script>
 </body>
 </html>
