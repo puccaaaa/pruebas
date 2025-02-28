@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trastornos Mentales</title>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño se adapte a cualquier dispositivo -->
+    <title>Trastornos Mentales</title> <!-- Título de la página -->
     <style>
-        /* Importar fuente aesthetic */
+        /* Importamos las fuentes que nos gustan */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap');
 
-        /* Estilo general del cuerpo con tonos crema y verdes pasteles */
+        /* Aquí configuramos el estilo del cuerpo, el color de fondo y la tipografía */
         body {       
             font-family: 'Playfair Display', serif;
-            background-color: #f8f1e4;
-            color: #4a4a4a;
+            background-color: #f8f1e4; /* Color crema claro */
+            color: #4a4a4a; /* Color de texto oscuro */
             margin: 0;
             padding: 0;
         }
 
-        /* Contenedor del video de fondo */
+        /* Estilo para el video de fondo */
         .background-video {
-            position: fixed;
-            top: 150px; /* Mueve el video aún más abajo */
+            position: fixed; /* Que se quede fijo al fondo */
+            top: 150px; /* Lo bajamos un poco desde el top */
             left: 0;
             width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.08; /* Más transparente */
+            height: 100vh; /* Tamaño total de la pantalla */
+            object-fit: cover; /* Para que cubra toda la pantalla sin deformarse */
+            z-index: -1; /* Que quede atrás de todo el contenido */
+            opacity: 0.08; /* Hacemos que sea muy transparente */
         }
     
         /* Fondo semitransparente para cerrar el menú */
         .overlay {
-            position: fixed;
+            position: fixed; 
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.3);
-            display: none;
-            z-index: 1;
+            background: rgba(0, 0, 0, 0.3); /* Fondo oscuro con algo de transparencia */
+            display: none; /* Esconde el overlay por defecto */
+            z-index: 1; /* Lo dejamos detrás del menú */
         }
     
-        /* Configuración del menú lateral en verde pastel */
+        /* Estilo del menú lateral */
         .sidebar {
-            width: 250px;
-            background-color: #b0c4a7;
+            width: 250px; /* Ancho del menú */
+            background-color: #b0c4a7; /* Verde pastel */
             padding: 20px;
             height: 100vh;
             position: fixed;
             top: 0;
-            left: -250px;
+            left: -250px; /* Empujamos el menú fuera de pantalla al principio */
             color: #3a3a3a;
-            transition: left 0.3s;
-            z-index: 2;
+            transition: left 0.3s; /* Animación para el menú cuando se abre */
+            z-index: 2; /* Lo dejamos por encima del overlay */
             font-family: 'Poppins', sans-serif;
-            overflow-y: auto; /* Habilita el scroll */
+            overflow-y: auto; /* Habilitamos el scroll si el menú es largo */
         }
 
-        /* Mostrar menú cuando se activa el checkbox */
+        /* Mostrar menú cuando el checkbox está marcado */
         #menu-toggle:checked ~ .sidebar {
-            left: 0;
+            left: 0; /* Lo movemos al lado izquierdo */
         }
 
         #menu-toggle:checked ~ .overlay {
-            display: block;
+            display: block; /* Mostramos el overlay cuando el menú está activo */
         }
     
-        /* Botón del menú */
+        /* Estilo del botón de menú */
         .menu-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #5c7358;
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            background-color: #5c7358; /* Verde oscuro */
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
-            z-index: 3;
+            z-index: 3; /* Lo ponemos por encima del menú */
         }
     
-        /* Título del menú centrado */
+        /* Estilo del título dentro del menú */
         .sidebar h2 {
             text-align: center;
             font-weight: 700;
         }
     
-        /* Lista de opciones del menú */
+        /* Estilo para la lista dentro del menú */
         .sidebar ul {
             list-style: none;
             padding: 0;
         }
     
-        /* Espaciado entre los elementos del menú */
+        /* Espaciado de los elementos dentro del menú */
         .sidebar ul li {
             padding: 10px 0;
         }
     
-        /* Enlaces dentro del menú */
+        /* Estilo para los enlaces del menú */
         .sidebar ul li a {
             color: #3a3a3a;
             text-decoration: none;
             display: block;
             padding: 8px;
-            transition: 0.3s;
+            transition: 0.3s; /* Efecto suave cuando pasamos el ratón */
         }
     
-        /* Efecto hover en los enlaces del menú */
+        /* Estilo cuando el ratón pasa por encima de los enlaces */
         .sidebar ul li a:hover {
-            background-color: #d4e2c3;
+            background-color: #d4e2c3; /* Verde claro */
             border-radius: 5px;
         }
     
-        /* Estilo del contenido principal */
+        /* Estilo para el contenido principal */
         .content {
             padding: 20px;
             margin-left: 20px;
         }
     
-        /* Cabecera del contenido con estilo vintage */
+        /* Estilo de la cabecera del contenido */
         .cabe {
-            background-color: #d4c1a1;
+            background-color: #d4c1a1; /* Fondo color cálido */
             padding: 20px;
             text-align: center;
             font-family: 'Playfair Display', serif;
@@ -136,7 +136,7 @@
             margin: 0;
         }
     
-        /* Texto de presentación */
+        /* Estilo del texto que va abajo del título */
         p {
             font-size: 18px;
             font-style: italic;
@@ -144,7 +144,7 @@
             color: #3a3a3a;
         }
 
-        /* Estilo para la sección de introducción */
+        /* Estilo de la sección de introducción */
         .intro {
             font-family: 'Poppins', sans-serif;
             color: #3a3a3a;
@@ -153,6 +153,7 @@
             line-height: 1.6;
         }
 
+        /* Títulos dentro de la introducción */
         .intro h2 {
             color: #5c7358;
             font-size: 24px;
@@ -160,10 +161,12 @@
             font-weight: bold;
         }
 
+        /* Estilo de la lista dentro de la introducción */
         .intro ul {
             padding-left: 20px;
         }
 
+        /* Espaciado de los ítems dentro de la lista */
         .intro ul li {
             margin-bottom: 10px;
         }
@@ -178,9 +181,9 @@
 
     <!-- Checkbox oculto para activar el menú -->
     <input type="checkbox" id="menu-toggle">
-    <!-- Botón de menú vinculado al checkbox -->
+    <!-- Botón de menú -->
     <label for="menu-toggle" class="menu-button">☰ Menú</label>
-    <!-- Overlay para cerrar el menú al hacer clic fuera -->
+    <!-- Overlay para cerrar el menú si hacemos clic fuera -->
     <label for="menu-toggle" class="overlay"></label>
     <div class="sidebar">
         <h2>Menú</h2>
@@ -206,7 +209,7 @@
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
 
-        <!-- Nueva sección de introducción -->
+        <!-- Sección de introducción -->
         <div class="intro">
             <h2>¿Qué es la salud mental?</h2>
             <p>
