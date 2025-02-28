@@ -16,6 +16,18 @@
             margin: 0;
             padding: 0;
         }
+
+        /* Contenedor del video de fondo */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.2; /* Hace que el video sea más sutil */
+        }
     
         /* Fondo semitransparente para cerrar el menú */
         .overlay {
@@ -90,12 +102,23 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: #4a4a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
     
         /* Título principal */
         h1 {
-            color: #928364bd;
+            color: #5c7358;
             font-size: 50px;
+            margin: 0;
+        }
+    
+        /* Imagen del logo */
+        .logo {
+            width: 60px;
+            height: 60px;
         }
     
         /* Texto de presentación */
@@ -105,40 +128,15 @@
             text-align: center;
             color: #3a3a3a;
         }
-    
-        /* Botón para mostrar el menú */
-        .menu-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #b0c4a7;
-            color: #4a4a4a;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block;
-            z-index: 3;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-        }
-
-        /* Checkbox oculto para controlar el menú */
-        #menu-toggle {
-            display: none;
-        }
-    
-        /* Cuando el checkbox está marcado, muestra el menú y el overlay */
-        #menu-toggle:checked ~ .sidebar {
-            left: 0;
-        }
-    
-        #menu-toggle:checked ~ .overlay {
-            display: block;
-        }
     </style>
 </head>
 <body>
+    <!-- Video de fondo -->
+    <video class="background-video" autoplay loop muted>
+        <source src="https://cdn.pixabay.com/video/2023/01/20/147244-791334020_large.mp4" type="video/mp4">
+        Tu navegador no soporta videos en HTML5.
+    </video>
+
     <!-- Checkbox oculto para activar el menú -->
     <input type="checkbox" id="menu-toggle">
     <!-- Botón de menú vinculado al checkbox -->
@@ -165,6 +163,7 @@
 
     <div class="content">
         <div class="cabe">
+            <img src="logo.png" alt="Logo" class="logo">
             <h1>Trastornos Mentales</h1>
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
