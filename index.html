@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trastornos Mentales</title>
     <style>
-        /* Estilo general del cuerpo */
+        /* Importar fuente aesthetic */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+        /* Estilo general del cuerpo con tonos crema y verdes pasteles */
         body {       
-            font-family: Arial, sans-serif;
-            background-color: #6b98a3;
-            color: #333;
+            font-family: 'Playfair Display', serif;
+            background-color: #f8f1e4;
+            color: #4a4a4a;
             margin: 0;
             padding: 0;
         }
@@ -21,28 +24,30 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             display: none;
             z-index: 1;
         }
     
-        /* Configuración del menú lateral */
+        /* Configuración del menú lateral en verde pastel */
         .sidebar {
             width: 250px;
-            background-color: #3c4a5f;
+            background-color: #b0c4a7;
             padding: 20px;
             height: 100vh;
             position: fixed;
             top: 0;
             left: -250px;
-            color: white; 
+            color: #3a3a3a;
             transition: left 0.3s;
             z-index: 2;
+            font-family: 'Poppins', sans-serif;
         }
     
         /* Título del menú centrado */
         .sidebar h2 {
             text-align: center;
+            font-weight: 700;
         }
     
         /* Lista de opciones del menú */
@@ -58,15 +63,16 @@
     
         /* Enlaces dentro del menú */
         .sidebar ul li a {
-            color: white;
+            color: #3a3a3a;
             text-decoration: none;
             display: block;
             padding: 8px;
+            transition: 0.3s;
         }
     
         /* Efecto hover en los enlaces del menú */
         .sidebar ul li a:hover {
-            background-color: #576b87;
+            background-color: #d4e2c3;
             border-radius: 5px;
         }
     
@@ -76,24 +82,28 @@
             margin-left: 20px;
         }
     
-        /* Cabecera del contenido */
+        /* Cabecera del contenido con estilo vintage */
         .cabe {
-            background-color: rgba(86, 127, 131, 0.568);
+            background-color: #d4c1a1;
             padding: 20px;
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #4a4a4a;
         }
     
         /* Título principal */
         h1 {
-            color: #3c4a5f;
+            color: #5c7358;
             font-size: 50px;
         }
     
         /* Texto de presentación */
         p {
-            font-size: 15px;
+            font-size: 18px;
             font-style: italic;
             text-align: center;
+            color: #3a3a3a;
         }
     
         /* Botón para mostrar el menú */
@@ -101,14 +111,16 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            background-color: #3c4a5f;
-            color: white;
+            background-color: #b0c4a7;
+            color: #4a4a4a;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
             display: inline-block;
             z-index: 3;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
         }
 
         /* Checkbox oculto para controlar el menú */
