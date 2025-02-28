@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trastornos Mentales</title>
     <style>
-        /* Importando fuente para usarla */
+        /* Importar fuente aesthetic */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap');
 
         /* Estilo general del cuerpo con tonos crema y verdes pasteles */
@@ -84,18 +84,29 @@
     
         /* Cabecera del contenido con estilo vintage */
         .cabe {
-            background-color: #d4c1a18c;
+            background-color: #d4c1a1;
             padding: 20px;
             text-align: center;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: #4a4a4a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
     
         /* Título principal */
         h1 {
-            color: #b39b6ec5;
+            color: #5c7358;
             font-size: 50px;
+            margin: 0;
+        }
+    
+        /* Imagen del logo */
+        .logo {
+            width: 60px;
+            height: 60px;
         }
     
         /* Texto de presentación */
@@ -104,37 +115,6 @@
             font-style: italic;
             text-align: center;
             color: #3a3a3a;
-        }
-    
-        /* Botón para mostrar el menú */
-        .menu-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #b0c4a7;
-            color: #4a4a4a;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block;
-            z-index: 3;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-        }
-
-        /* Checkbox oculto para controlar el menú */
-        #menu-toggle {
-            display: none;
-        }
-    
-        /* Cuando el checkbox está marcado, muestra el menú y el overlay */
-        #menu-toggle:checked ~ .sidebar {
-            left: 0;
-        }
-    
-        #menu-toggle:checked ~ .overlay {
-            display: block;
         }
     </style>
 </head>
@@ -165,6 +145,7 @@
 
     <div class="content">
         <div class="cabe">
+            <img src="https://i.pinimg.com/236x/e0/3e/df/e03edf4f63a951cb1d9cf1992d5b576c.jpg" alt="Logo" class="logo">
             <h1>Trastornos Mentales</h1>
         </div>
         <p>"Cuidemos nuestra mente como cuidamos nuestro cuerpo"</p>
